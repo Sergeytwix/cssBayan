@@ -37,8 +37,14 @@ hr {
     margin-bottom: 0;
 }
 
+.meme-item:active {
+    color: #0059d9;
+    transform: scale(0.97) ;
+}
+
 .meme-item:hover {
     cursor: pointer;
+
 }
 
 .meme:hover {
@@ -68,6 +74,7 @@ img {
     position: absolute;
     top: 50%;
     right: 15px;
+    margin-left: 1px;
     transform: translateY(-25%);
 }
 
