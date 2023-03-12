@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 100px auto;
+    background-color:#f5f5eb;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0 0 5px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+/* MEME */
+.meme {
+    margin: 30px auto 30px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #0059d9;
+    transition: color .2s;
+}
+
+/* item */
+.meme-item {
+    margin-bottom: 30px;
+}
+
+.meme:hover {
+    color: black;
+}
+
+.meme-title {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+img {
+    width: 0;
+    height: 0;
+    transition: 0.5s;
+}
+
+.meme-title::after {
+    content: "";
+    display: none;
+    border-style: solid;
+    border-width: 8px 5px 0 5px;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-25%);
+}
+
+.meme-input {
+    width: 0;
+    height: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.meme-text {
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    animation: shows 1s;
+    justify-content: center;
+    display: block;
+    transition: 0.5s;
+}
+
+/* slow animation for content */
+@keyframes shows {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* visible content */
+.meme-text:checked {
+    width: 100%;
+    height: 420px;
+}
+
+.meme-input:checked ~ .meme-text {
+    width: 100%;
+    height: 420px;
+    transition: 0.3s;
+}
+
+.meme-input:checked ~ .meme-title {
+    color: black;
+    transition: 0.3s;
+}
+
+.meme-input:hover ~ .meme-text > img {
+    width: 400px;
+    height: 400px;
+    transition: 0.3s;
+}
+
+.meme-input:checked ~ .meme-text > img {
+    width: 400px;
+    height: 400px;
+    transition: 0.3s;
+}
+
+.meme-input:hover ~ .meme-text {
+    width: 100%;
+    height: 420px;
+    transition: 0.3s;
+}
+
+.meme-text:hover {
+    width: 100%;
+    height: 420px;
+    transition: 0.3s;
+}
+
+/* icons */
+.meme-input:checked ~ .meme-title:after {
+    border-style: solid;
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent black transparent;
+}
+
+.meme-input:hover ~ .meme-title:after {
+    border-style: solid;
+    border-width: 0 5px 8px 5px;
+    border-color: transparent transparent black transparent;
+}
+
+.meme:hover > .meme-item > .meme-title::after{
+    display: block;
+}
